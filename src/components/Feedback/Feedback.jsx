@@ -1,8 +1,15 @@
-import css from './Feedback.module.css';
+// import css from './Feedback.module.css';
 
 import { Component } from 'react';
 
 class Feedback extends Component {
+
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0
+  }
+
   render() {
     return (
       <div>
@@ -18,6 +25,7 @@ class Feedback extends Component {
           <li>Netural</li>
           <li>Bad</li>
         </ul>
+        <p>Positive Feedback %</p>
       </div>
     );
   }
