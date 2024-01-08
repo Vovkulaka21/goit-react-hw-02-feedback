@@ -28,7 +28,7 @@ class Feedback extends Component {
 
     const procent = (total * goodfeedback) / 100;
 
-    return procent;
+    return Math.round(procent);
   }
 
   yourFeedback(reaction) {
