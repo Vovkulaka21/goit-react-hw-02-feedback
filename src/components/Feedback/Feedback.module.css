@@ -1,1 +1,17 @@
-import css from "."
+.list {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+.resultlist {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.button {
+    cursor: pointer;
+}
+.result {
+    margin-top: 10px;
+}

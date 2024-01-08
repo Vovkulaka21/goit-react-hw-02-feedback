@@ -1,4 +1,4 @@
-// import css from './Feedback.module.css';
+import css from './Feedback.module.css';
 
 import { Component } from 'react';
 
@@ -13,24 +13,24 @@ class Feedback extends Component {
     return (
       <div>
         <h1>Please Leave Feedback</h1>
-        <ul>
+        <ul className={css.list}>
           <li>
-            <a href="#">Good</a>
+            <button type='submit' className={css.button}>Good</button>
           </li>
           <li>
-            <a href="#">Netural</a>
+            <button type='submit' className={css.button}>Netural</button>
           </li>
           <li>
-            <a href="#">Bad</a>
+            <button type='submit' className={css.button}>Bad</button>
           </li>
         </ul>
         <h2>Statistics</h2>
-        <ul>
+        <ul className={css.resultlist}>
           <li>Good</li>
           <li>Netural</li>
           <li>Bad</li>
         </ul>
-        <p>Positive Feedback %</p>
+        <h3 className={css.result}>Positive Feedback %</h3>
       </div>
     );
   }
