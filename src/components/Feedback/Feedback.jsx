@@ -3,6 +3,7 @@ import css from './Feedback.module.css';
 import { Component } from 'react';
 
 class Feedback extends Component {
+  
   static feedbackOptions = ['good', 'neutral', 'bad'];
 
   state = {
