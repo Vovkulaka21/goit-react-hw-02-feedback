@@ -3,7 +3,7 @@ import css from './Feedback.module.css';
 import { Component } from 'react';
 
 class Feedback extends Component {
-  
+
   static feedbackOptions = ['good', 'neutral', 'bad'];
 
   state = {
@@ -27,9 +27,9 @@ class Feedback extends Component {
       return 0;
     }
 
-    const procent = (total * goodfeedback) / 100;
+    const procent = (goodfeedback / total) * 100;
 
-    return Math.round(procent);
+    return Math.round(Number(procent).toFixed(2));
   }
 
   yourFeedback(reaction) {
