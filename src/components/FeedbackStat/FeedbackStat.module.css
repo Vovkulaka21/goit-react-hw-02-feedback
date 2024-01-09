@@ -16,5 +16,6 @@
     padding-left: 10px;
   }
   .warning {
-    
+    font-weight: bold;
+    margin: 10px 0 10px 10px;
   }
