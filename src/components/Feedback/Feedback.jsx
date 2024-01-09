@@ -2,6 +2,10 @@ import css from './Feedback.module.css';
 
 import { Component } from 'react';
 
+import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
+
+import FeedbackStat from 'components/FeedbackStat/FeedbackStat';
+
 class Feedback extends Component {
 
   static feedbackOptions = ['good', 'neutral', 'bad'];
@@ -32,7 +36,7 @@ class Feedback extends Component {
     return Math.round(Number(procent).toFixed(2));
   }
 
-  yourFeedback(reaction) {
+  yourFeedback = (reaction) => {
     this.setState(prevState => {
       return {
         [reaction]: prevState[reaction] + 1,
@@ -43,33 +47,14 @@ class Feedback extends Component {
   render() {
     const { good, neutral, bad } = this.state;
 
-    const optionButton = Feedback.feedbackOptions.map(option => (
-      <button
-        onClick={() => this.yourFeedback(option)}
-        key={option}
-        className={css.button}
-      >
-        {option}
-      </button>
-    ));
-
     const procent = this.countPositiveFeedbackPercentage(good);
 
     const total = this.countTotalFeedback();
 
     return (
       <div className={css.box}>
-        <h1 className={css.feedbacktitle}>Please Leave Feedback</h1>
-        <div className={css.feedbackblock}>{optionButton}</div>
-
-        <h2 className={css.titlestat}>Statistics</h2>
-        <ul className={css.resultlist}>
-          <li>Good: {good}</li>
-          <li>Netural: {neutral}</li>
-          <li>Bad: {bad}</li>
-          <li>Total: {total}</li>
-        </ul>
-        <p className={css.result}>Positive Feedback {procent} %</p>
+      <FeedbackOptions options={Feedback.feedbackOptions} onLeaveFeedback={this.yourFeedback}/>
+<FeedbackStat good={good} neutral={neutral} bad={bad} total={total} positivePercentage={procent}/>
       </div>
     );
   }
