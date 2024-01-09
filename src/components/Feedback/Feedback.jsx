@@ -7,7 +7,6 @@ import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import FeedbackStat from 'components/FeedbackStat/FeedbackStat';
 
 class Feedback extends Component {
-
   static feedbackOptions = ['good', 'neutral', 'bad'];
 
   state = {
@@ -36,13 +35,13 @@ class Feedback extends Component {
     return Math.round(Number(procent).toFixed(2));
   }
 
-  yourFeedback = (reaction) => {
+  yourFeedback = reaction => {
     this.setState(prevState => {
       return {
         [reaction]: prevState[reaction] + 1,
       };
     });
-  }
+  };
 
   render() {
     const { good, neutral, bad } = this.state;
@@ -53,8 +52,17 @@ class Feedback extends Component {
 
     return (
       <div className={css.box}>
-      <FeedbackOptions options={Feedback.feedbackOptions} onLeaveFeedback={this.yourFeedback}/>
-<FeedbackStat good={good} neutral={neutral} bad={bad} total={total} positivePercentage={procent}/>
+        <FeedbackOptions
+          options={Feedback.feedbackOptions}
+          onLeaveFeedback={this.yourFeedback}
+        />
+        <FeedbackStat
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          total={total}
+          positivePercentage={procent}
+        />
       </div>
     );
   }

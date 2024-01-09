@@ -2,6 +2,9 @@ import css from './FeedbackStat.module.css'
 
 const FeedbackStat = ({good, neutral, bad, total, positivePercentage}) =>
 {
+    if (total === 0) {
+        return (<p>There is no feedback</p>)
+    }
     return ( 
     <> 
     <h2 className={css.titlestat}>Statistics</h2>
