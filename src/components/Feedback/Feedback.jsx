@@ -7,6 +7,7 @@ import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import FeedbackStat from 'components/FeedbackStat/FeedbackStat';
 
 class Feedback extends Component {
+  
   static feedbackOptions = ['good', 'neutral', 'bad'];
 
   state = {
