@@ -3,10 +3,6 @@
     padding-bottom: 5px;
     border-bottom: solid 1px salmon;
   }
-.feedbacktitle {
-    text-align: center;
-    margin-top: 10px;
-  }
   .buttonblock {
     display: flex;
     gap: 5px;

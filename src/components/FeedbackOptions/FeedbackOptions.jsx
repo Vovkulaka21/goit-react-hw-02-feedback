@@ -13,7 +13,6 @@ const FeedbackOptions = ({options, onLeaveFeedback}) => {
       ));
   return (
     <div className={css.feedbackblock}>
-      <h1 className={css.feedbacktitle}>Please Leave Feedback</h1>
       <div className={css.buttonblock}>{optionButton}</div>
     </div>
   );

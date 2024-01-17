@@ -4,7 +4,6 @@ const Statistics = ({good, neutral, bad, total, positivePercentage}) =>
 {
     return ( 
     <> 
-    <h2 className={css.titlestat}>Statistics</h2>
     <ul className={css.resultlist}>
       <li>Good: {good}</li>
       <li>Netural: {neutral}</li>

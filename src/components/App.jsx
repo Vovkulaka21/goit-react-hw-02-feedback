@@ -3,7 +3,7 @@ import { Component } from 'react';
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import Notification from './Notification/Notification';
 import Statistics from 'components/Statistics/Statistics';
-
+import Section from './Section/Section';
 
 import css from './App.module.css';
 
@@ -51,20 +51,25 @@ export class App extends Component {
 
     return (
       <div className={css.box}>
-        <FeedbackOptions
-          options={Object.keys(this.state)}
-          onLeaveFeedback={this.yourFeedback}
-        />
+        <Section title={<h1>Please leave feedback</h1>}>
+          {' '}
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.yourFeedback}
+          />
+        </Section>
         {total === 0 ? (
           <Notification message={'There is no feedback'} />
         ) : (
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={total}
-            positivePercentage={procent}
-          />
+          <Section title={<h2>Statistic</h2>}>
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={procent}
+            />
+          </Section>
         )}
       </div>
     );
