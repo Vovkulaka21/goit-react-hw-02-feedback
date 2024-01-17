@@ -1,10 +1,7 @@
-import css from './FeedbackStat.module.css'
+import css from './Statistics.module.css'
 
-const FeedbackStat = ({good, neutral, bad, total, positivePercentage}) =>
+const Statistics = ({good, neutral, bad, total, positivePercentage}) =>
 {
-    if (total === 0) {
-        return (<p className={css.warning}>There is no feedback</p>)
-    }
     return ( 
     <> 
     <h2 className={css.titlestat}>Statistics</h2>
@@ -18,4 +15,4 @@ const FeedbackStat = ({good, neutral, bad, total, positivePercentage}) =>
     </> )     
 }
 
-export default FeedbackStat
+export default Statistics

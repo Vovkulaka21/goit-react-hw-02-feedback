@@ -1,16 +1,13 @@
 import { Component } from 'react';
 
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
+import Notification from './Notification/Notification';
+import Statistics from 'components/Statistics/Statistics';
 
-import FeedbackStat from 'components/FeedbackStat/FeedbackStat';
 
-import css from "./App.module.css"
-
+import css from './App.module.css';
 
 export class App extends Component {
-
-  static feedbackOptions = ['good', 'neutral', 'bad'];
-
   state = {
     good: 0,
     neutral: 0,
@@ -55,17 +52,21 @@ export class App extends Component {
     return (
       <div className={css.box}>
         <FeedbackOptions
-          options={App.feedbackOptions}
+          options={Object.keys(this.state)}
           onLeaveFeedback={this.yourFeedback}
         />
-        <FeedbackStat
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={total}
-          positivePercentage={procent}
-        />
+        {total === 0 ? (
+          <Notification message={'There is no feedback'} />
+        ) : (
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={total}
+            positivePercentage={procent}
+          />
+        )}
       </div>
     );
-  } 
-};
+  }
+}
